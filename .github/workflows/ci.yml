@@ -1,4 +1,4 @@
-name: CI/CD - Teste e Deploy
+name: CI/CD Pipeline
 
 on:
   push:
@@ -9,48 +9,28 @@ on:
       - main
 
 jobs:
-  # Job de Testes
-  test:
+  lint:
+    name: Run Linters
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checar repositório
-        uses: actions/checkout@v2
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v2
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
-
-      - name: Instalar dependências
-        run: npm install
-
-      - name: Rodar os testes
-        run: echo "Testes não configurados" # Nenhum teste real, apenas uma simulação
-
-  # Job de Deploy
-  deploy:
-    runs-on: ubuntu-latest
-    needs: test
-    if: success() # Só faz o deploy se os testes passarem
-    
-    steps:
-      - name: Checar repositório
-        uses: actions/checkout@v2
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Instalar dependências
-        run: npm install
-
-      - name: Fazer o build do site
-        run: echo "Build do site (não implementado para este exemplo)"
-
-      - name: Deploy para o Vercel
+          node-version: '18'
+      
+      - name: Install Dependencies
         run: |
-          # Aqui você pode adicionar o comando para fazer o deploy
-          # Exemplo: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
-          echo "Deploy para Vercel (simulação)"
+          npm install -g eslint stylelint tidy-html5
+      
+      - name: Lint HTML
+        run: tidy -errors index.html
+      
+      - name: Lint CSS
+        run: stylelint "**/*.css"
+      
+      - name: Lint JavaScript
+        run: eslint "**/*.js"
