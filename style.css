@@ -1,25 +1,86 @@
+/* Estilo geral */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    line-height: 1.6;
 }
 
+/* Estilo do header */
 header {
     background-color: #4CAF50;
     padding: 20px;
     color: white;
 }
 
+/* Título do header */
+header h1 {
+    margin: 0;
+}
+
+/* Notas de versão */
+.release-notes {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.release-notes h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.release-notes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.release-notes ul li {
+    text-align: left;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Estilo para o botão */
 button {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 button:hover {
     background-color: #45a049;
+}
+
+/* Estilo para o rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 600px) {
+    .release-notes {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.2rem;
+    }
 }
