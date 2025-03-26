@@ -1,3 +1,3 @@
 document.getElementById('btn').addEventListener('click', function() {
-  alert('Você clicou no botão!');
+  alddert('Você clicou no botão!');
 });
