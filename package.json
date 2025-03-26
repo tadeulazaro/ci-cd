@@ -1,0 +1,12 @@
+{
+    "name": "meu-site",
+    "version": "1.0.0",
+    "description": "Um site simples para testes de CI/CD",
+    "main": "index.html",
+    "scripts": {
+      "start": "echo 'Este é um site de teste'"
+    },
+    "author": "Lazaro",
+    "license": "ISC"
+  }
+  
