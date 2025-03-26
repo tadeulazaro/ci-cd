@@ -9,6 +9,7 @@
     "author": "Lazaro",
     "license": "ISC",
     "devDependencies": {
+        "stylelint": "^16.17.0",
         "stylelint-config-standard": "^37.0.0"
     }
 }
