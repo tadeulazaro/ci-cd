@@ -26,6 +26,9 @@ jobs:
         run: |
           npm install -g eslint stylelint tidy-html5
       
+      - name: Install tidy-html5
+        run: sudo apt-get install tidy
+
       - name: Lint HTML
         run: tidy -errors index.html
       
