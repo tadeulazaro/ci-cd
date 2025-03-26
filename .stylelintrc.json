@@ -1,9 +1,9 @@
 {
     "extends": "stylelint-config-standard",
     "rules": {
-      "indentation": 2,  // Ajuste a indentação conforme necessário
-      "max-empty-lines": 1, // Ajuste o número máximo de linhas vazias
-      "no-missing-end-of-source-newline": true // Ajuste conforme necessário
+      "indentation": 2, 
+      "max-empty-lines": 1, 
+      "no-missing-end-of-source-newline": true 
     }
   }
   
