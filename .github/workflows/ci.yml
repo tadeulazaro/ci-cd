@@ -25,6 +25,7 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install -g eslint stylelint tidy-html5
+          npm install stylelint-config-standard --save-dev
       
       - name: Install tidy-html5
         run: sudo apt-get install tidy

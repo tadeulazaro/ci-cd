@@ -4,9 +4,11 @@
     "description": "Um site simples para testes de CI/CD",
     "main": "index.html",
     "scripts": {
-      "start": "echo 'Este é um site de teste'"
+        "start": "echo 'Este é um site de teste'"
     },
     "author": "Lazaro",
-    "license": "ISC"
-  }
-  
+    "license": "ISC",
+    "devDependencies": {
+        "stylelint-config-standard": "^37.0.0"
+    }
+}
