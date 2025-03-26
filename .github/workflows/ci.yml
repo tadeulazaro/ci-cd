@@ -24,8 +24,7 @@ jobs:
       
       - name: Install Dependencies
         run: |
-          npm install -g eslint tidy-html5
-          npm install stylelint stylelint-config-standard --save-dev
+          npm install # Este comando vai instalar todas as dependências, incluindo o stylelint
       
       - name: Install tidy-html5
         run: sudo apt-get install tidy
@@ -34,7 +33,7 @@ jobs:
         run: tidy -errors index.html
       
       - name: Lint CSS
-        run: stylelint "**/*.css"
+        run: npx stylelint "**/*.css" # Usando npx para garantir que o stylelint será executado corretamente
       
       - name: Lint JavaScript
-        run: eslint "**/*.js"
+        run: npx eslint "**/*.js" # Usando npx para garantir que o eslint será executado corretamente
