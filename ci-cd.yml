@@ -1,0 +1,44 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Passo 1: Checkout do código
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      # Passo 2: Validar se os arquivos HTML, CSS, JS estão presentes
+      - name: Verificar arquivos
+        run: |
+          if [ ! -f index.html ]; then
+            echo "index.html não encontrado!"
+            exit 1
+          fi
+          if [ ! -f styles.css ]; then
+            echo "styles.css não encontrado!"
+            exit 1
+          fi
+          if [ ! -f script.js ]; then
+            echo "script.js não encontrado!"
+            exit 1
+          fi
+          echo "Arquivos HTML, CSS e JS encontrados com sucesso!"
+
+      # Passo 3: Confirmar que não há erros de linting no código (opcional)
+      - name: Verificar erros de linting no CSS
+        run: |
+          if command -v csslint &>/dev/null; then
+            csslint *.css
+          else
+            echo "CSSLint não instalado. Ignorando linting."
+          fi

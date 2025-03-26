@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Completo de AWS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            line-height: 1.6;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            transition: background 0.3s ease;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2.8em;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        header:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: rgba(255, 255, 255, 0.2);
+            margin: 15px auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        ul li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Accordion Styles */
+        .content {
+            display: none;
+            margin-top: 15px;
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .content.active {
+            display: block;
+            transform: translateY(10px);
+        }
+
+        .accordion {
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 10px;
+            background-color: #2a5298;
+            color: white;
+            font-size: 1.1em;
+            text-align: left;
+            width: 80%;
+            margin: auto;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion:hover {
+            background-color: #1e3c72;
+        }
+
+        footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+
+        /* Emojis para cabeçalhos */
+        h3::before {
+            content: "📚 ";
+            font-size: 1.5em;
+        }
+
+        li::before {
+            content: "👉 ";
+            font-size: 1.2em;
+        }
+    </style>
+     <!-- Script do Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9852494591359830"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Curso Completo de AWS 🚀</h1>
+        <p>Do zero ao avançado - Infraestrutura, Automação e Segurança na Nuvem</p>
+    </header>
+
+    <section id="intro">
+        <h2>O que você vai aprender?</h2>
+        <p>Este curso cobre os principais serviços da AWS, desde a criação de servidores até segurança, monitoramento e CI/CD.</p>
+    </section>
+
+    <section id="modulos">
+        <h2>Módulos do Curso</h2>
+        <ul>
+            <li class="accordion">Módulo 1: Introdução à AWS</li>
+            <div class="content">
+                <h3>Passo a Passo para o Módulo 1</h3>
+                <ol>
+                    <li><strong>Passo 1:</strong> <span>Criação da conta AWS</span>
+                        <p>Se você ainda não tem uma conta AWS, crie uma agora. Vá para o site da AWS (<a href="https://aws.amazon.com/pt/" target="_blank">AWS</a>) e clique em "Criar uma conta da AWS".</p>
+                        <p>Complete as informações necessárias (email, senha, dados do cartão de crédito, etc). A AWS oferece uma camada gratuita para iniciantes, então você não será cobrado se usar os recursos gratuitos.</p>
+                    </li>
+
+                    <li><strong>Passo 2:</strong> <span>Configurando o Console da AWS</span>
+                        <p>Depois de criar sua conta, faça login no Console da AWS. O Console é onde você gerencia todos os recursos da AWS. Explore os menus e veja os serviços disponíveis. Familiarize-se com o layout.</p>
+                    </li>
+
+                    <li><strong>Passo 3:</strong> <span>Entendendo os Serviços Principais da AWS</span>
+                        <p>A AWS possui muitos serviços, mas para iniciantes, alguns dos principais são:</p>
+                        <ul>
+                            <li><strong>EC2 (Elastic Compute Cloud):</strong> Servidores virtuais na nuvem.</li>
+                            <li><strong>S3 (Simple Storage Service):</strong> Armazenamento de arquivos na nuvem.</li>
+                            <li><strong>IAM (Identity and Access Management):</strong> Controle de acesso e permissões.</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Passo 4:</strong> <span>Criando sua Primeira Instância EC2</span>
+                        <p>No console da AWS, vá até o serviço EC2 e clique em "Launch Instance". Escolha a AMI (Amazon Machine Image) desejada (por exemplo, Amazon Linux 2). Escolha o tipo de instância (t2.micro para a camada gratuita) e configure as opções de segurança (adicionar regras para SSH).</p>
+                        <p>Depois, clique em "Launch" para criar sua instância.</p>
+                    </li>
+
+                    <li><strong>Passo 5:</strong> <span>Trabalhando com o S3</span>
+                        <p>Agora, crie um bucket no serviço S3 para armazenar seus arquivos. No console da AWS, vá até o S3 e clique em "Create Bucket". Dê um nome único ao bucket e selecione a região. Após a criação, você pode carregar arquivos e gerenciar o armazenamento de dados na nuvem.</p>
+                    </li>
+
+                    <li><strong>Passo 6:</strong> <span>Configuração de Usuários IAM</span>
+                        <p>Para garantir a segurança, você deve criar usuários e atribuir permissões. No Console da AWS, acesse o serviço IAM e crie um novo usuário. Atribua permissões básicas, como acesso ao EC2 e S3. Em seguida, configure suas credenciais e anote-as para acessos futuros.</p>
+                    </li>
+                </ol>
+            </div>
+            <li class="accordion">Módulo 2: EC2 e S3</li>
+            <div class="content">
+                <h3>Passos para o Módulo 2</h3>
+                <ol>
+                    <li><strong>Passo 1:</strong> Criação de uma instância EC2</li>
+                    <li><strong>Passo 2:</strong> Configuração de segurança e firewall</li>
+                    <li><strong>Passo 3:</strong> Primeiros passos com S3</li>
+                </ol>
+            </div>
+            <li class="accordion">Módulo 3: IAM e Segurança</li>
+            <div class="content">
+                <h3>Passos para o Módulo 3</h3>
+                <ol>
+                    <li><strong>Passo 1:</strong> O que é o IAM?</li>
+                    <li><strong>Passo 2:</strong> Criação de usuários e grupos no IAM</li>
+                    <li><strong>Passo 3:</strong> Políticas de acesso e permissões</li>
+                </ol>
+            </div>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Curso AWS - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Script do Accordion
+        const accordions = document.querySelectorAll('.accordion');
+        accordions.forEach((accordion) => {
+            accordion.addEventListener('click', () => {
+                const content = accordion.nextElementSibling;
+                content.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
