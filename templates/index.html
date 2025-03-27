@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site de Teste - Release v1.0.0</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Alterado para usar o Flask para servir arquivos estáticos -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <header>
@@ -30,6 +31,7 @@
         <p>Versão: v1.0.0 - Desenvolvido por [Seu Nome]</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Alterado para usar o Flask para servir o JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

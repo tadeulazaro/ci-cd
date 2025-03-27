@@ -1,39 +1,33 @@
-name: CI/CD Pipeline
+name: Build and Deploy Docker
 
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - main  # Executa em pushes para a branch principal
 
 jobs:
-  lint:
-    name: Run Linters
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      
-      - name: Install Dependencies
-        run: |
-          npm install # Este comando vai instalar todas as dependências, incluindo o stylelint
-      
-      - name: Install tidy-html5
-        run: sudo apt-get install tidy
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Lint HTML
-        run: tidy -errors index.html
-      
-      - name: Lint CSS
-        run: npx stylelint "**/*.css" # Usando npx para garantir que o stylelint será executado corretamente
-      
-      - name: Lint JavaScript
-        run: npx eslint "**/*.js" # Usando npx para garantir que o eslint será executado corretamente
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Cache Docker layers
+      uses: actions/cache@v2
+      with:
+        path: /tmp/.buildx-cache
+        key: ${{ runner.os }}-buildx-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-buildx-
+
+    - name: Build Docker image
+      run: |
+        docker build -t nome-da-imagem .
+
+    - name: Run Docker container
+      run: |
+        docker run -d -p 3000:3000 nome-da-imagem
