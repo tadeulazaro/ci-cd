@@ -1,18 +1,17 @@
-# Usar a imagem base do Python
-FROM python:3.8-slim
+# Usar imagem base do Python
+FROM python:3.9
 
-# Definir o diretório de trabalho no container
+# Criar diretório para a aplicação
 WORKDIR /app
 
-# Copiar os arquivos locais para o container
-COPY . /app
+# Copiar os arquivos do projeto
+COPY . .
 
-# Instalar as dependências
+# Instalar dependências
 RUN pip install -r requirements.txt
 
-# Expor a porta onde o Flask estará rodando
+# Expor a porta usada pelo Flask
 EXPOSE 5000
 
-# Comando para rodar o aplicativo Flask
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
-
+# Comando para iniciar o Flask
+CMD ["python", "app.py"]
